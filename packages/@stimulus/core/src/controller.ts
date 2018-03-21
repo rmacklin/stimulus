@@ -3,10 +3,11 @@ import { Context } from "./context"
 import { DataMap } from "./data_map"
 import { Scope } from "./scope"
 import { TargetSet } from "./target_set"
-import { defineTargetProperties } from "./target_properties"
+import { TargetPropertiesBlessing } from "./target_properties_blessing"
+import { performBlessings } from "./blessing"
 
 export interface ControllerConstructor {
-  bless()
+  bless(): ControllerConstructor
   new(context: Context): Controller
 }
 
@@ -15,8 +16,8 @@ export class Controller {
 
   readonly context: Context
 
-  static bless() {
-    defineTargetProperties(this)
+  static bless(): ControllerConstructor {
+    return performBlessings(this, [ TargetPropertiesBlessing ])
   }
 
   constructor(context: Context) {

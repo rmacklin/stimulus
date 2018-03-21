@@ -16,11 +16,6 @@ export class LogController extends Controller {
   connectCount = 0
   disconnectCount = 0
 
-  static bless() {
-    super.bless()
-    this.blessCount++
-  }
-
   initialize() {
     this.initializeCount++
   }
