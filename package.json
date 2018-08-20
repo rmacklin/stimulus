@@ -9,6 +9,7 @@
     "lint": "lerna run --parallel lint",
     "prebuild": "yarn lint",
     "build": "lerna run --stream --prefix build",
+    "build:all": "tsc -b packages/@stimulus/multimap packages/@stimulus/mutation-observers packages/@stimulus/core",
     "watch": "lerna run --parallel watch",
     "start": "lerna run --scope @stimulus/examples --stream start",
     "test": "yarn build && karma start config/karma.conf.js",
@@ -37,7 +38,7 @@
     "tslint": "^5.7.0",
     "typedoc": "^0.11.1",
     "typedoc-plugin-stimulus": "file:packages/typedoc-plugin-stimulus",
-    "typescript": "^2.8.4",
+    "typescript": "^3.0.1",
     "webpack": "^3.10.0"
   }
 }

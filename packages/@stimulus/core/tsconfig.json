@@ -1,6 +1,11 @@
 {
   "extends": "../../../config/tsconfig.web",
   "compilerOptions": {
-    "outDir": "dist"
-  }
+    "outDir": "dist",
+    "composite": true
+  },
+  "include": [
+    "index.ts",
+    "src/**/*"
+  ]
 }

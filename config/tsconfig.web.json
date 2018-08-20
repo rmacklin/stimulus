@@ -4,5 +4,10 @@
     "target": "es5",
     "module": "es2015",
     "lib": ["dom", "es2015", "scripthost"]
-  }
+  },
+  "references": [
+    { "path": "packages/@stimulus/mutation-observers" },
+    { "path": "packages/@stimulus/multimap" },
+    { "path": "packages/@stimulus/core" }
+  ]
 }
